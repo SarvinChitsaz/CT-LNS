@@ -1,7 +1,6 @@
 # CT-LNS
 Preprocessing, patch-based dataset creation, and 3D U-Net training for lung nodule segmentation on CT scans.
 
-
 ## Overview
 
 CT-LNS is a novel pipeline designed to enable accurate and automated **lung nodule segmentation** in 3D CT scans.  
@@ -9,7 +8,6 @@ CT-LNS is a novel pipeline designed to enable accurate and automated **lung nodu
 Unlike conventional 2D approaches, CT-LNS leverages volumetric 3D information, patch extraction, and data augmentation to improve segmentation performance on limited and imbalanced datasets. The pipeline integrates preprocessing, patch-based dataset creation, and 3D U-Net training to provide a complete solution for lung nodule detection.
 
 CT-LNS has been evaluated on annotated CT scans with diverse nodule sizes and locations, demonstrating reliable performance in segmenting nodules of varying shapes and intensities. The framework is robust, scalable, and suitable for both research and clinical-oriented medical image analysis projects.
-
 
 ## Features
 
@@ -34,7 +32,6 @@ CT-LNS has been evaluated on annotated CT scans with diverse nodule sizes and lo
 - **Evaluation Metrics**:  
   Dice coefficient, nodule voxel accuracy, and epoch-wise loss reporting for comprehensive performance assessment.
 
-  
 ## Data
 
 To evaluate and train the pipeline, CT-LNS requires annotated 3D CT scans:
@@ -44,6 +41,30 @@ To evaluate and train the pipeline, CT-LNS requires annotated 3D CT scans:
 
 The preprocessing module resamples images, generates masks from annotations, normalizes intensities, and saves the results as `.npy` files suitable for patch-based dataset creation.
 
+### Data Folder Structure
+
+- `raw`  
+  Raw data files:  
+  - `.mhd` CT volumes  
+  - `annotations.csv` containing nodule annotations
+
+- `npy_preprocessed`  
+  Preprocessed `.npy` files ready for training:  
+  - `_img.npy` → preprocessed CT volume  
+  - `_mask.npy` → corresponding nodule mask
+
+### Dataset Source
+
+The pipeline uses annotated 3D CT scans from the **LUNA16 subset5 dataset**:
+
+- **Dataset page**: [LUNA16 Challenge](https://luna16.grand-challenge.org)  
+- **CT volumes**: [subset5.zip](https://zenodo.org/records/3723295/files/subset5.zip?download=1)  
+- **Annotations**: [annotations.csv](https://zenodo.org/records/3723295/files/annotations.csv?download=1)
+
+### Notes
+
+- To generate the preprocessed `.npy` files from `raw/`, run the preprocessing scripts in `src/utils.py`.  
+- Ensure consistent folder paths in `config/config.yaml` before preprocessing.
 
 ## Requirements
 
@@ -63,3 +84,12 @@ Install dependencies via:
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Visualization
+
+Here is an example of the CT-LNS preprocessing result:
+
+[![CT-LNS Visualization](CT-LNS/visualization_result.jpeg)](CT-LNS/visualization_result.jpeg)
+
+
