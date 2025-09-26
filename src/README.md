@@ -34,8 +34,11 @@ This folder contains the main source code for **CT-LNS**, including data handlin
   - Handles mixed precision and optimizer updates  
   - Updates learning rate scheduler  
 
-- **`eval.py`**  
+- **eval.py**  
   Evaluation scripts.  
   - Load trained models from `Models/checkpoints`  
   - Evaluate using Dice coefficient and nodule accuracy  
-  - `visualize_ct_nodule`: Visualize CT slices with ground truth and predicted masks
+
+- **visualize.py**  
+  Visualization utilities.  
+  - `visualize_ct_nodule`: Display CT slices with ground truth and predicted masks  
