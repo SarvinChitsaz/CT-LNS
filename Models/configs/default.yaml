@@ -1,0 +1,12 @@
+learning_rate: 0.0001
+batch_size: 2
+patch_size: [96, 96, 96]
+num_epochs: 5
+optimizer: "Adam"
+scheduler:
+  type: "ReduceLROnPlateau"
+  factor: 0.5
+  patience: 3
+augmentation:
+  horizontal_flip: true
+device: "cuda"
