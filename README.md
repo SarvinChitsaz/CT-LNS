@@ -88,7 +88,7 @@ pip install -r requirements.txt
 
 ## Visualization
 
-Here is an example of the CT-LNS preprocessing result:
+Here is an example of the CT-LNS visual result:
 
 [![CT-LNS Visualization](visualization_result.jpeg)](visualization_result.jpeg)
 
