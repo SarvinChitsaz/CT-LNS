@@ -1,5 +1,7 @@
 # CT-LNS
 Preprocessing, patch-based dataset creation, and 3D U-Net training for lung nodule segmentation on CT scans.
+
+
 ## Overview
 
 CT-LNS is a novel pipeline designed to enable accurate and automated **lung nodule segmentation** in 3D CT scans.  
@@ -31,6 +33,8 @@ CT-LNS has been evaluated on annotated CT scans with diverse nodule sizes and lo
 
 - **Evaluation Metrics**:  
   Dice coefficient, nodule voxel accuracy, and epoch-wise loss reporting for comprehensive performance assessment.
+
+  
 ## Data
 
 To evaluate and train the pipeline, CT-LNS requires annotated 3D CT scans:
@@ -39,6 +43,8 @@ To evaluate and train the pipeline, CT-LNS requires annotated 3D CT scans:
 - **Annotation format**: CSV file with columns: `seriesuid`, `coordX`, `coordY`, `coordZ`, `diameter_mm`
 
 The preprocessing module resamples images, generates masks from annotations, normalizes intensities, and saves the results as `.npy` files suitable for patch-based dataset creation.
+
+
 ## Requirements
 
 The following libraries are required:
