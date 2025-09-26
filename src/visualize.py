@@ -54,6 +54,3 @@ def visualize_ct_nodule(npy_folder, pred_thresh = 0.3):
 
     plt.tight_layout()
     plt.show()
-
-if __name__ == "__main__":
-    visualize_ct_nodule("data/npy_preprocessed", pred_thresh = 0.3)
