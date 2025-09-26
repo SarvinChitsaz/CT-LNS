@@ -1,0 +1,19 @@
+data:
+  raw_path: "data/raw"
+  preprocessed_path: "data/npy_preprocessed"
+
+patch_size: [96, 96, 96]
+batch_size: 2
+num_epochs: 5
+
+device: "cuda"
+
+train:
+  optimizer: "Adam"
+  learning_rate: 0.0001
+  scheduler:
+    type: "ReduceLROnPlateau"
+    factor: 0.5
+    patience: 3
+  augmentation:
+    horizontal_flip: true
